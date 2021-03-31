@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(240,240,240);
+}
+#menusav {
+    background-color: lightgray;
+    position: sticky; /* Nagyon fontos a legördülő menühöz!!! */
+    top: 0px; /* Nagyon fontos a legördülő menühöz!!! */
+    border: 3px solid rgba(40,40,40,0);
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.openbve-logo {
+    color: rgba(22,22,22,1);
+    background-color: rgba(0,0,0,0);
+    height: 50px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    vertical-align: middle;
+}
+.menupontok {
+    color: rgba(22,22,22,1);
+    background-color: rgba(0,0,0,0);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+    vertical-align: middle;
+}
+a {
+    text-decoration-line: none;
+    color: black;
+}
