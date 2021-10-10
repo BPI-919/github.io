@@ -9,8 +9,10 @@
   var snowsrc = "img/hopehely.png";
   // Configure below to change number of snow to render
   var no = 16;
-  // Configure whether snow should disappear after x seconds (0=never):
-  var hidesnowtime = 0;
+  // Configure time in sec when snow should disappear (-1 = no specific date):
+  var hidesnowtime = -1;
+  // Configure time in sec when snow should appear (-1 = no specific date):
+  var unhidesnowtime = -1;
   // Configure how much snow should drop down before fading ("windowheight" or "pageheight")
   var snowdistance = "pageheight";
 
@@ -73,17 +75,35 @@
       document.getElementById("dot"+i).style.top=yp[i]+"px";
       document.getElementById("dot"+i).style.left=xp[i] + am[i]*Math.sin(dx[i])+"px";  
     }
-    snowtimer=setTimeout("snowIE_NS6()", 10);
+    setTimeout("snowIE_NS6()", 10);
   }
 
 	function hidesnow(){
-		if (window.snowtimer) clearTimeout(snowtimer)
 		for (i=0; i<no; i++) document.getElementById("dot"+i).style.visibility="hidden"
 	}
-		
+	
+  function unhidesnow(){
+		for (i=0; i<no; i++) document.getElementById("dot"+i).style.visibility="visible"
+	}
+
+  function time(){
+    const now = new Date();
+
+    let hour = now.getHours();
+    let min = now.getMinutes();
+    let sec = now.getSeconds();
+    
+    const time = hour * 3600 + min * 60 + sec;
+
+    return time;
+  }
 
 if (ie4up||ns6up){
     snowIE_NS6();
-		if (hidesnowtime>0)
-		setTimeout("hidesnow()", hidesnowtime*1000)
-		}
+		if (hidesnowtime >= 0 && (hidesnowtime != unhidesnowtime)) {
+      setTimeout("hidesnow()", (hidesnowtime - time()) * 1000);
+    }
+    if (unhidesnowtime >= 0 && (hidesnowtime != unhidesnowtime)) {
+      setTimeout("unhidesnow()", (unhidesnowtime - time()) * 1000);
+    }
+}
