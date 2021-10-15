@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(40,40,40);
+}
+.menusav {
+    background-color: rgb(100,100,100);
+}
+body, .menusav a {
+    color: rgb(230,230,230);
+}
