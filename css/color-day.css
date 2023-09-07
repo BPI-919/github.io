@@ -4,6 +4,6 @@ body {
 .menusav {
     background-color: rgb(211,211,211);
 }
-body, .menusav a {
+body, .menusav, a {
     color: rgb(22,22,22);
 }
