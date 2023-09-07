@@ -1,0 +1,41 @@
+.table {
+    border-collapse: collapse;
+    width: 1200px;
+}
+
+.head {
+    height: 0px;
+}
+
+.body {
+    height: 540px;
+}
+
+.foot {
+    height: 0px;
+}
+
+.left {
+    background-color: rgb(0, 0, 0);
+}
+
+.center {
+    background-color: rgb(127, 127, 127);
+}
+
+.right {
+    background-color: rgb(255, 255, 255);
+}
+
+.span1 {
+    font-size: 35pt;
+}
+
+.span2 {
+    font-size: 20pt;
+}
+
+.td {
+    text-align: center;
+    vertical-align: middle;
+}
